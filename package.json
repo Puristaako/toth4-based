@@ -93,13 +93,6 @@
         "headerColor": "#3498DB"
       },
       {
-        "name": "players",
-        "title": "Players",
-        "width": 4,
-        "file": "players.html",
-        "headerColor": "#3498DB"
-      },
-      {
         "name":"st-stats",
         "title":"Stats control",
         "width":"4",
