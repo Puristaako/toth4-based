@@ -1,0 +1,36 @@
+<link rel="import" href="../../components/polymer/polymer.html">
+
+<dom-module id="toth-sponsors">
+    <template>
+		<style>
+			:host {
+				position: absolute;
+				box-sizing: border-box;
+				top: 165px;
+				left: 25px;
+				display: block;
+				width: 128px;
+				height: 128px;
+				background-color: rgba(0, 0, 0, 0);
+			}
+
+			.logo {
+				box-sizing: border-box;
+				width: calc(128px - 48px);
+				top: 12px;
+				left: 24px;
+				height: calc(128px - 24px);
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+				opacity: 0;
+				position: absolute;
+			}
+		</style>
+
+        <div id="currentLogo" class="logo"></div>
+        <div id="nextLogo" class="logo"></div>
+    </template>
+
+	<script src="toth-sponsors.js"></script>
+</dom-module>

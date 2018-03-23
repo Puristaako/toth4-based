@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!--
+    <script src="//use.typekit.net/ofl6oue.js"></script>
+    <script>try {Typekit.load();} catch (e) {}</script>
+  -->
+	<script src="components/gsap/src/minified/TweenMax.min.js"></script>
+	<script src="app/main.js"></script>
+	<link href="elements/toth-ticker/toth-ticker.html" rel="import">
+    <link href="elements/toth-brb/toth-brb.html" rel="import">
+    <link href="elements/toth-lowerthird/toth-lowerthird.html" rel="import">
+    <link href="elements/toth-scoreboard/toth-scoreboard.html" rel="import">
+    <link href="elements/toth-tweet/toth-tweet.html" rel="import">
+    <link href="elements/toth-nameplate/toth-nameplate.html" rel="import">
+    <link href="elements/st-stats/st-stats.html" rel="import">
+
+	<style>
+		body {
+			margin: 0;
+			opacity: 0;
+		}
+
+		#container {
+			position: absolute;
+			width: 1920px;
+			height: 1080px;
+			overflow: hidden;
+			/* font-family: "proxima-nova"; */
+      font-family: 'Roboto', sans-serif;
+			/*background: url("http://i.imgur.com/EcIltyp.png");
+			background: url("http://i.imgur.com/ivbkXt1.png");*/
+		}
+
+		#brb {
+			position: absolute;
+			width: 1920px;
+			height: 900px;
+			top: 130px;
+		}
+
+		#hashtag {
+			position: absolute;
+			top: 18px;
+			left: 24px;
+			font-size: 32px;
+			font-weight: 700;
+			color: white;
+			opacity: 0;
+		}
+
+		#lowerthird {
+			position: absolute;
+			bottom: 0;
+		}
+
+		#scoreboard {
+			position: absolute;
+			top: 70px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+
+		#lowerthird {
+			position: absolute;
+			top: 805px;
+			right: 88px;
+		}
+
+		#nowPlaying {
+			position: absolute;
+			top: 680px;
+			left: 25px;
+		}
+    #nameplate {
+      position: absolute;
+      top: 180px;
+    }
+
+    #st-stats {
+      position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 56px;
+      background-color: lightblue;
+		}
+	</style>
+</head>
+<body>
+
+    <div id="container">
+        <toth-brb id="brb"></toth-brb>
+		<div id="hashtag">#101111.RU</div>
+        <toth-scoreboard id="scoreboard"></toth-scoreboard>
+        <toth-lowerthird id="lowerthird"></toth-lowerthird>
+        <!--
+        <toth-sponsors id="sponsors"></toth-sponsors>
+        <toth-nowplaying id="nowPlaying"></toth-nowplaying>
+        <toth-tweet id="tweet"></toth-tweet>
+      -->
+    <toth-nameplate id="nameplate"> </toth-nameplate>
+		<toth-ticker id="ticker"></toth-ticker>
+    <st-stats id="st-stats"></st-stats>
+    </div>
+</body>
+</html>
