@@ -9,25 +9,130 @@
       font-size: 42px;
       font-weight: 800;
     }
+
+    #wrapper {
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		-moz-align-items: center;
+		-webkit-align-items: center;
+		-ms-align-items: center;
+		align-items: center;
+		-moz-justify-content: space-between;
+		-webkit-justify-content: space-between;
+		-ms-justify-content: space-between;
+		justify-content: space-between;
+		-moz-flex-direction: column;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		position: relative;
+		padding: 1.5em;
+		z-index: 2;
+	}
 		</style>
 
-    <div>
+	<body>
 
-    				<!-- Main -->
-                  <h1 class="player">Дарья Кугаевская</h1>
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+              <h1 class="player">Дарья Кугаевская</h1>
 
 
-                  <div id="data_container" style="width:100%; height:400px;"></div>
+              <div id="st-chart" style="width:80%; height:650px;"></div>
 
 
-    				<!-- Footer -->
-    					<footer id="footer">
 
-    					</footer>
+				<!-- Footer -->
+					<footer id="footer">
 
-    </div>
+					</footer>
+
+			</div>
+
+
+	</body>
+
 
     </template>
+    <script src="https://code.highcharts.com/highcharts.src.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script>
+      $(function () {
+
+        var max = 1200;
+      var myChart = Highcharts.chart('st-chart', {
+          chart: {
+              type: 'column'
+          },
+          title: {
+              text: 'Место в рейтинге РТТ'
+          },
+          xAxis: {
+              categories: ['Ноябрь 2017', 'Декабрь 2017', 'Январь 2018', 'Февраль 2018', 'Март 2018']
+          },
+          yAxis: {
+              min: 1,
+              max: max,
+              reversed: true,
+            title: {
+                  text: ''
+              },
+
+            labels:{
+              formatter:function(){
+                  if(this.value !=0){
+                      return this.value;
+                  }
+                if(this.value ==0){
+                      return '1';
+                  }
+              }
+          }
+      },
+        plotOptions: {
+          series: {
+              dataLabels: {
+                  enabled: true,
+                  align: "center",
+                  y: -10,
+                  shape: 'callout'
+              }
+          }
+      },
+
+          series: [{
+          type: 'line',
+          name: 'Место',
+          data: [{
+              y: 1110,
+              low: max
+          }, {
+              y: 1167,
+              low: max
+          }, {
+              y: 489,
+              low: max
+          },
+                {
+              y: 507,
+              low: max
+          },
+                {
+              y: 559,
+              low: max
+          }]
+      }]
+      });
+  });
+    </script>
 
 	<script src="st-stats.js"></script>
+
 </dom-module>
